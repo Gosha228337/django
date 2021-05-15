@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type= "text/css" href="(% static 'index.css' %)" />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% if quest_list %}
+            <ul>
+                {% for question in question_list %}
+                <li><a href="/polls/{{question.id}}/">{{question.question_text}}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Ничего нет</p>
+        {% endif %}
+</head>
+</body>
+
+</body>
+</html>
